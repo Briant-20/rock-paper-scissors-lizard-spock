@@ -60,7 +60,10 @@ playRound = () => {
     }
 }
 }
-playGame = () => {
+playGame = (event) => {
+    games = 0;
+    computerWins = 0;
+    playerWins = 0;
     for (let i = 0; i < buttons.length; i++) {
         getPlayerChoice = (event) => {
         playerChoice = buttons[i].getAttribute("choice");
@@ -69,4 +72,5 @@ playGame = () => {
         buttons[i].addEventListener("click", playRound);
     }
     }
-playGame();
+let startGame = document.getElementById("start-game");
+startGame.addEventListener("click", playGame);
