@@ -7,7 +7,7 @@ button{
 #play-again-button{
     font-size: 30px;
 }
-#top-choices, #bottom-choices, #play-again{
+#top-choices, #bottom-choices, #play-again, #round-results{
     display: flex;
     justify-content: center;
     align-items: center;    

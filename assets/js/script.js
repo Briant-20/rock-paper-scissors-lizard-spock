@@ -7,10 +7,11 @@ let tieGames = 0;
 let games = 0;
 let buttons = document.getElementsByTagName("button");
 let playAgain = document.getElementById("play-again");
-let playAgainText = document.getElementsByTagName("p")[0];
+let playAgainText = document.getElementsByTagName("p")[1];
 let playAgainButton = document.getElementsByTagName("button")[0];
 playAgain.style.display = 'none';
 let gameArea = document.getElementById("game-area");
+let roundResults = document.getElementById("round-results");
 let choices = ["rock","paper","scissors","lizard","spock"];
 let rules = {
     rock: {
@@ -39,31 +40,31 @@ getComputerChoice = () => {
 playRound = () => {
     if (games < 3){
         computerChoice = getComputerChoice();
-        console.log(`The computer chose ${computerChoice}`);
-        console.log(`You chose ${playerChoice}`);
+        roundResults.innerHTML = `You chose ${playerChoice} `;
+        roundResults.innerHTML += `The computer chose ${computerChoice} `;
         if(rules[playerChoice].beats.includes(computerChoice)){
-            console.log("You win this round!");
+            roundResults.innerHTML += "You win this round!";
+            roundResults.style.display = 'flex';
             playerWins++;
             games++
         }
         else if(rules[computerChoice].beats.includes(playerChoice)){
-            console.log("Sorry the computer wins this round!");
+            roundResults.innerHTML += "Sorry the computer wins this round!";
+            roundResults.style.display = 'flex';
             computerWins++;
             games++
         }
         else{
-            console.log("This round is a tie try again");
+            roundResults.innerHTML += "This round is a tie try again";
+            roundResults.style.display = 'flex';
         }
         if (games === 3){
-            console.log(games);
+            gameArea.style.display = 'none';
+            playAgain.style.display = 'flex';
             if (computerWins > playerWins){
-                gameArea.style.display = 'none';
-                playAgain.style.display = 'flex';
                 playAgainText.innerHTML = `The computer wins the game with ${computerWins} rounds out of 3`;
                 }
             else if (playerWins > computerWins){
-                gameArea.style.display = 'none';
-                playAgain.style.display = 'flex';
                 playAgainText.innerHTML = `Congrtulations you win the game with ${playerWins} rounds out of 3`;
             }
         }
