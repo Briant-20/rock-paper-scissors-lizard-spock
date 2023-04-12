@@ -1,21 +1,30 @@
-#top-choices, #bottom-choices, #start-game{
-    display: flex;
-    justify-content: center;
-}
 button{
-    margin: .5em;
     height: 100px;
     width: 30%;
     font-size: 50px;
+    margin: 5px 5px 0 0;
 }
+#play-again-button{
+    font-size: 30px;
+}
+#top-choices, #bottom-choices, #play-again{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+#play-again{
+    flex-direction: column;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+
 /* For devices with a width higher than 950px */
 @media screen and (min-width: 800px) {
     button{
+        margin: .5em;
         height: 120px;
         width: 15%;   
-    }
-    h1{
-        display: flex;
-        justify-content: center;
     }
 }

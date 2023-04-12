@@ -6,9 +6,10 @@ let computerWins = 0;
 let tieGames = 0;
 let games = 0;
 let buttons = document.getElementsByTagName("button");
-let startGame = document.getElementById("play-again");
-let playAgain = document.getElementsByTagName("p")[0];
-startGame.style.display = 'none';
+let playAgain = document.getElementById("play-again");
+let playAgainText = document.getElementsByTagName("p")[0];
+let playAgainButton = document.getElementsByTagName("button")[0];
+playAgain.style.display = 'none';
 let gameArea = document.getElementById("game-area");
 let choices = ["rock","paper","scissors","lizard","spock"];
 let rules = {
@@ -57,13 +58,13 @@ playRound = () => {
             console.log(games);
             if (computerWins > playerWins){
                 gameArea.style.display = 'none';
-                startGame.style.display = 'block';
-                playAgain.innerHTML = `The computer wins the game with ${computerWins} rounds total out of 3`;
+                playAgain.style.display = 'flex';
+                playAgainText.innerHTML = `The computer wins the game with ${computerWins} rounds out of 3`;
                 }
             else if (playerWins > computerWins){
                 gameArea.style.display = 'none';
-                startGame.style.display = 'block';
-                playAgain.innerHTML = `Congrtulations you win the game with ${playerWins} rounds total out of 3`;
+                playAgain.style.display = 'flex';
+                playAgainText.innerHTML = `Congrtulations you win the game with ${playerWins} rounds out of 3`;
             }
         }
     }
@@ -73,7 +74,7 @@ playGame = () => {
     games = 0;
     computerWins = 0;
     playerWins = 0;
-    startGame.style.display = 'none';
+    playAgain.style.display = 'none';
     gameArea.style.display = 'block';
     for (let i = 0; i < buttons.length; i++) {
         getPlayerChoice = () => {
@@ -85,4 +86,4 @@ playGame = () => {
 }
 
 playGame();
-startGame.addEventListener("click", playGame);
+playAgainButton.addEventListener("click", playGame);
