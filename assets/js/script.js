@@ -9,6 +9,7 @@ let buttons = document.getElementsByTagName("button");
 let startGame = document.getElementById("play-again");
 let playAgain = document.getElementsByTagName("p")[0];
 startGame.style.display = 'none';
+let gameArea = document.getElementById("game-area");
 let choices = ["rock","paper","scissors","lizard","spock"];
 let rules = {
     rock: {
@@ -55,10 +56,12 @@ playRound = () => {
         if (games === 3){
             console.log(games);
             if (computerWins > playerWins){
+                gameArea.style.display = 'none';
                 startGame.style.display = 'block';
                 playAgain.innerHTML = `The computer wins the game with ${computerWins} rounds total out of 3`;
                 }
             else if (playerWins > computerWins){
+                gameArea.style.display = 'none';
                 startGame.style.display = 'block';
                 playAgain.innerHTML = `Congrtulations you win the game with ${playerWins} rounds total out of 3`;
             }
@@ -71,8 +74,9 @@ playGame = () => {
     computerWins = 0;
     playerWins = 0;
     startGame.style.display = 'none';
+    gameArea.style.display = 'block';
     for (let i = 0; i < buttons.length; i++) {
-        getPlayerChoice = (event) => {
+        getPlayerChoice = () => {
         playerChoice = buttons[i].getAttribute("choice");
         }
         buttons[i].addEventListener("click", getPlayerChoice);
