@@ -7,12 +7,15 @@ let tieGames = 0;
 let games = 0;
 let buttons = document.getElementsByTagName("button");
 let playAgain = document.getElementById("play-again");
-let playAgainText = document.getElementsByTagName("p")[1];
+let playAgainText = document.getElementsByTagName("p")[3];
 let playAgainButton = document.getElementsByTagName("button")[0];
-playAgain.style.display = 'none';
 let gameArea = document.getElementById("game-area");
-let roundResults = document.getElementById("round-results");
-let choices = ["rock","paper","scissors","lizard","spock"];
+let roundResults = document.getElementsByTagName("p")[0];
+let choices = ["rock","paper","scissors","lizard","spock"]
+let playerIcon = document.getElementsByTagName("p")[1];
+let computerIcon = document.getElementsByTagName("p")[2];
+let playerChoiceIcon;
+playAgain.style.display = 'none';
 let rules = {
     rock: {
         beats: ['scissors','lizard'] 
@@ -34,28 +37,31 @@ let rules = {
 getComputerChoice = () => {
     let num = Math.floor(Math.random() * 5);
     computerChoice = choices[num];
-    return computerChoice;
+    computerChoiceIcon = gameArea.querySelectorAll("button");
+    computerChoiceIcon = computerChoiceIcon[num].innerHTML;
 }
 
 playRound = () => {
     if (games < 3){
-        computerChoice = getComputerChoice();
-        roundResults.innerHTML = `You chose ${playerChoice} `;
-        roundResults.innerHTML += `The computer chose ${computerChoice} `;
+        getComputerChoice();
+        playerIcon.innerHTML = playerChoiceIcon;
+        computerIcon.innerHTML = computerChoiceIcon;
         if(rules[playerChoice].beats.includes(computerChoice)){
-            roundResults.innerHTML += "You win this round!";
+            roundResults.innerHTML = "You win this round! ";
+            roundResults.innerHTML += `${playerChoice} beats ${computerChoice}`
             roundResults.style.display = 'flex';
             playerWins++;
             games++
         }
         else if(rules[computerChoice].beats.includes(playerChoice)){
-            roundResults.innerHTML += "Sorry the computer wins this round!";
+            roundResults.innerHTML = "You lose! ";
+            roundResults.innerHTML += `${computerChoice} beats ${playerChoice}`
             roundResults.style.display = 'flex';
             computerWins++;
             games++
         }
         else{
-            roundResults.innerHTML += "This round is a tie try again";
+            roundResults.innerHTML = "This round is a tie try again";
             roundResults.style.display = 'flex';
         }
         if (games === 3){
@@ -77,9 +83,14 @@ playGame = () => {
     playerWins = 0;
     playAgain.style.display = 'none';
     gameArea.style.display = 'block';
+    playerIcon.innerHTML="";
+    computerIcon.innerHTML="";
+    roundResults.innerHTML = "Best of 3, choose wisely";
     for (let i = 0; i < buttons.length; i++) {
         getPlayerChoice = () => {
         playerChoice = buttons[i].getAttribute("choice");
+        playerChoiceIcon = gameArea.querySelectorAll("button");
+        playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
         }
         buttons[i].addEventListener("click", getPlayerChoice);
         buttons[i].addEventListener("click", playRound);

@@ -7,20 +7,27 @@ button{
 #play-again-button{
     font-size: 30px;
 }
-#top-choices, #bottom-choices, #play-again, #round-results{
+#top-choices, #bottom-choices, #play-again, #round-results, #choice-icons{
     display: flex;
     justify-content: center;
     align-items: center;    
 }
-#play-again{
+#play-again, #round-results{
     flex-direction: column;
+}
+#choice-icons{
+    flex-direction: row;
+}
+p{
+    margin-left: 5px;
+    margin-right: 5px;
 }
 h1{
     display: flex;
     justify-content: center;
 }
 
-/* For devices with a width higher than 950px */
+/* For devices with a width higher than px */
 @media screen and (min-width: 800px) {
     button{
         margin: .5em;
