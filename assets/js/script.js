@@ -10,6 +10,7 @@ let playAgain = document.getElementById("play-again");
 let playAgainText = document.getElementsByTagName("p")[3];
 let playAgainButton = document.getElementsByTagName("button")[0];
 let gameArea = document.getElementById("game-area");
+let choiceIcons = document.getElementById("choice-icons");
 let roundResults = document.getElementsByTagName("p")[0];
 let choices = ["rock","paper","scissors","lizard","spock"]
 let playerIcon = document.getElementsByTagName("p")[1];
@@ -46,23 +47,22 @@ playRound = () => {
         getComputerChoice();
         playerIcon.innerHTML = playerChoiceIcon;
         computerIcon.innerHTML = computerChoiceIcon;
+        roundResults.style.display = 'flex';
+        choiceIcons.style.display = 'flex';
         if(rules[playerChoice].beats.includes(computerChoice)){
             roundResults.innerHTML = "You win this round! ";
             roundResults.innerHTML += `${playerChoice} beats ${computerChoice}`
-            roundResults.style.display = 'flex';
             playerWins++;
             games++
         }
         else if(rules[computerChoice].beats.includes(playerChoice)){
             roundResults.innerHTML = "You lose! ";
             roundResults.innerHTML += `${computerChoice} beats ${playerChoice}`
-            roundResults.style.display = 'flex';
             computerWins++;
             games++
         }
         else{
             roundResults.innerHTML = "This round is a tie try again";
-            roundResults.style.display = 'flex';
         }
         if (games === 3){
             gameArea.style.display = 'none';
@@ -71,7 +71,7 @@ playRound = () => {
                 playAgainText.innerHTML = `The computer wins the game with ${computerWins} rounds out of 3`;
                 }
             else if (playerWins > computerWins){
-                playAgainText.innerHTML = `Congrtulations you win the game with ${playerWins} rounds out of 3`;
+                playAgainText.innerHTML = `You win the game with ${playerWins} rounds out of 3`;
             }
         }
     }
@@ -83,8 +83,7 @@ playGame = () => {
     playerWins = 0;
     playAgain.style.display = 'none';
     gameArea.style.display = 'block';
-    playerIcon.innerHTML="";
-    computerIcon.innerHTML="";
+    choiceIcons.style.display = 'none';
     roundResults.innerHTML = "Best of 3, choose wisely";
     for (let i = 0; i < buttons.length; i++) {
         getPlayerChoice = () => {
