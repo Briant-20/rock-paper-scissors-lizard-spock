@@ -33,6 +33,7 @@ p{
 h1{
     display: flex;
     justify-content: center;
+    font-style: italic;
 }
 
 /* For devices with a width higher than px */
