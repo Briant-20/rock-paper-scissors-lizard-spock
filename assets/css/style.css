@@ -1,8 +1,11 @@
-body{
+/* Set the background color to black and text color to white */
+body {
     background-color: black;
     color: white;
 }
-button{
+
+/* Style for the choice buttons */
+button {
     height: 100px;
     width: 30%;
     font-size: 50px;
@@ -11,26 +14,43 @@ button{
     justify-content: center;
     align-items: center;
 }
-#play-again-button{
+
+/* Style for the play-again button */
+#play-again-button {
     font-size: 30px;
 }
-#top-choices, #bottom-choices, #play-again, #round-results, #choice-icons{
+
+/* Style for the containers holding the player and computer choices, play-again button, round results, and choice icons */
+#top-choices,
+#bottom-choices,
+#play-again,
+#round-results,
+#choice-icons {
     display: flex;
     justify-content: center;
     align-items: center;    
 }
-#play-again, #round-results{
+
+/* Style for the play-again and round results containers */
+#play-again,
+#round-results {
     flex-direction: column;
 }
-#choice-icons{
+
+/* Style for the choice icons container */
+#choice-icons {
     flex-direction: row;
     font-size: 50px;
 }
-p{
+
+/* Style for paragraphs */
+p {
     margin-left: 10px;
     margin-right: 10px;
 }
-h1{
+
+/* Style for the game title */
+h1 {
     display: flex;
     justify-content: center;
     font-style: italic;
