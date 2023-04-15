@@ -36,8 +36,8 @@ h1{
     font-style: italic;
 }
 
-/* For devices with a width higher than px */
-@media screen and (min-width: 800px) {
+/* For devices with a width higher than 750px */
+@media screen and (min-width: 750px) {
     button{
         margin: .5em;
         height: 120px;
