@@ -101,8 +101,8 @@ playGame = () => {
      // Set up event listeners for each button
      for (let i = 0; i < buttons.length; i++) {
         getPlayerChoice = () => {
-            // Get the player's choice from the button's choice attribute
-            playerChoice = buttons[i].getAttribute("choice");
+            // Get the player's choice from the button's attribute
+            playerChoice = buttons[i].getAttribute("type");
 
             // Set the playerChoiceIcon variable to the innerHTML of the button
             playerChoiceIcon = gameArea.querySelectorAll("button");
