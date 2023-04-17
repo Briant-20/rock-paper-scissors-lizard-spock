@@ -7,7 +7,6 @@ let computerWins = 0;
 let games = 0;
 let playerChoiceIcon;
 let computerChoiceIcon;
-let i;
 // Get HTML elements for variables
 let buttons = document.getElementsByTagName("button");
 let playAgain = document.getElementById("play-again");
@@ -99,17 +98,15 @@ let playGame = () => {
     gameArea.style.display = 'block';
     choiceIcons.style.display = 'none';
     roundResults.innerHTML = "Best of 3, choose wisely";
-    let getPlayerChoice = () => {
-        // Get the player's choice from the button's attribute
-        playerChoice = buttons[i].getAttribute("data-type");
-
-        // Set the playerChoiceIcon variable to the innerHTML of the button
-        playerChoiceIcon = gameArea.querySelectorAll("button");
-        playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
-    };
      // Set up event listeners for each button
-     for (i = 0; i < buttons.length; i++) {
-        getPlayerChoice();
+     for (let i = 0; i < buttons.length; i++) {
+        getPlayerChoice = () => {
+            // Get the player's choice from the button's attribute
+            playerChoice = buttons[i].getAttribute("data-type");
+            // Set the playerChoiceIcon variable to the innerHTML of the button
+            playerChoiceIcon = gameArea.querySelectorAll("button");
+            playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
+        };
         // Add event listeners to the button
         buttons[i].addEventListener("click", getPlayerChoice);
         buttons[i].addEventListener("click", playRound);
