@@ -1,9 +1,13 @@
+/* jshint esversion: 11 */
 // Initialize variables for game state
 let computerChoice;
 let playerChoice;
 let playerWins = 0;
 let computerWins = 0;
 let games = 0;
+let playerChoiceIcon;
+let computerChoiceIcon;
+let i;
 // Get HTML elements for variables
 let buttons = document.getElementsByTagName("button");
 let playAgain = document.getElementById("play-again");
@@ -15,8 +19,6 @@ let roundResults = document.getElementsByTagName("p")[0];
 let choices = ["rock","paper","scissors","lizard","spock"];
 let playerIcon = document.getElementsByTagName("p")[1];
 let computerIcon = document.getElementsByTagName("p")[2];
-let playerChoiceIcon;
-let computerChoiceIcon;
 // Hide the play-again button initially
 playAgain.style.display = 'none';
 // Define rules for which choices beat which other choices
@@ -97,17 +99,17 @@ let playGame = () => {
     gameArea.style.display = 'block';
     choiceIcons.style.display = 'none';
     roundResults.innerHTML = "Best of 3, choose wisely";
+    let getPlayerChoice = () => {
+        // Get the player's choice from the button's attribute
+        playerChoice = buttons[i].getAttribute("data-type");
+
+        // Set the playerChoiceIcon variable to the innerHTML of the button
+        playerChoiceIcon = gameArea.querySelectorAll("button");
+        playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
+    };
      // Set up event listeners for each button
-     for (let i = 0; i < buttons.length; i++) {
-        let getPlayerChoice = () => {
-            // Get the player's choice from the button's attribute
-            playerChoice = buttons[i].getAttribute("data-type");
-
-            // Set the playerChoiceIcon variable to the innerHTML of the button
-            playerChoiceIcon = gameArea.querySelectorAll("button");
-            playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
-        };
-
+     for (i = 0; i < buttons.length; i++) {
+        getPlayerChoice();
         // Add event listeners to the button
         buttons[i].addEventListener("click", getPlayerChoice);
         buttons[i].addEventListener("click", playRound);
