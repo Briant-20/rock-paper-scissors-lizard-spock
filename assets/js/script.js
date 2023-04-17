@@ -16,6 +16,7 @@ let choices = ["rock","paper","scissors","lizard","spock"];
 let playerIcon = document.getElementsByTagName("p")[1];
 let computerIcon = document.getElementsByTagName("p")[2];
 let playerChoiceIcon;
+let computerChoiceIcon;
 // Hide the play-again button initially
 playAgain.style.display = 'none';
 // Define rules for which choices beat which other choices
@@ -98,7 +99,7 @@ let playGame = () => {
     roundResults.innerHTML = "Best of 3, choose wisely";
      // Set up event listeners for each button
      for (let i = 0; i < buttons.length; i++) {
-        getPlayerChoice = () => {
+        let getPlayerChoice = () => {
             // Get the player's choice from the button's attribute
             playerChoice = buttons[i].getAttribute("data-type");
 
