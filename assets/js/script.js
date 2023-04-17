@@ -1,10 +1,8 @@
 // Initialize variables for game state
 let computerChoice;
 let playerChoice;
-let winner;
 let playerWins = 0;
 let computerWins = 0;
-let tieGames = 0;
 let games = 0;
 // Get HTML elements for variables
 let buttons = document.getElementsByTagName("button");
@@ -14,7 +12,7 @@ let playAgainButton = document.getElementsByTagName("button")[0];
 let gameArea = document.getElementById("game-area");
 let choiceIcons = document.getElementById("choice-icons");
 let roundResults = document.getElementsByTagName("p")[0];
-let choices = ["rock","paper","scissors","lizard","spock"]
+let choices = ["rock","paper","scissors","lizard","spock"];
 let playerIcon = document.getElementsByTagName("p")[1];
 let computerIcon = document.getElementsByTagName("p")[2];
 let playerChoiceIcon;
@@ -37,17 +35,17 @@ let rules = {
     spock: {
          beats: ['scissors','rock'] 
     }
-}
+};
 // Function to randomly select computer's choice
-getComputerChoice = () => {
+let getComputerChoice = () => {
     let num = Math.floor(Math.random() * 5);
     computerChoice = choices[num];
     computerChoiceIcon = gameArea.querySelectorAll("button");
     computerChoiceIcon = computerChoiceIcon[num].innerHTML;
-}
+};
 
 // Function to play a round of the game
-playRound = () => {
+let playRound = () => {
     // Only play a round if less than 3 rounds have been played
     if (games < 3){
         // Get the computer's choice and the player's choice
@@ -60,15 +58,15 @@ playRound = () => {
         // Determine the winner of the round based on the rules
         if(rules[playerChoice].beats.includes(computerChoice)){
             roundResults.innerHTML = "You win this round! ";
-            roundResults.innerHTML += `${playerChoice} beats ${computerChoice}`
+            roundResults.innerHTML += `${playerChoice} beats ${computerChoice}`;
             playerWins++;
-            games++
+            games++;
         }
         else if(rules[computerChoice].beats.includes(playerChoice)){
             roundResults.innerHTML = "You lose! ";
-            roundResults.innerHTML += `${computerChoice} beats ${playerChoice}`
+            roundResults.innerHTML += `${computerChoice} beats ${playerChoice}`;
             computerWins++;
-            games++
+            games++;
         }
         else{
             roundResults.innerHTML = "This round is a tie try again";
@@ -85,11 +83,11 @@ playRound = () => {
             }
         }
     }
-}
+};
 
 
 // Function to start a new game
-playGame = () => {
+let playGame = () => {
     // Reset game state
     games = 0;
     computerWins = 0;
@@ -107,13 +105,13 @@ playGame = () => {
             // Set the playerChoiceIcon variable to the innerHTML of the button
             playerChoiceIcon = gameArea.querySelectorAll("button");
             playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
-        }
+        };
 
         // Add event listeners to the button
         buttons[i].addEventListener("click", getPlayerChoice);
         buttons[i].addEventListener("click", playRound);
     }
-}
+};
 
 // Call the playGame function to start the game
 playGame();
