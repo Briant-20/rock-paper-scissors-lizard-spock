@@ -93,8 +93,7 @@ let getPlayerChoice = (i) => {
     // Get the player's choice from the button's attribute
     playerChoice = buttons[i].getAttribute("data-type");
     // Set the playerChoiceIcon variable to the innerHTML of the button
-    playerChoiceIcon = gameArea.querySelectorAll("button");
-    playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
+    playerChoiceIcon = gameArea.querySelectorAll("button")[i-1].innerHTML;
     };
 }; 
 
