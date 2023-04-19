@@ -15,3 +15,17 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 ### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+## Browser Compatibility
+
+| Chrome | ![screenshot](documentation/chrome.png) | Works as expected |
+| Firefox | ![screenshot](documentation/firefox.png) | Works as expected |
+| Edge | ![screenshot](documentation/edge.png) | Works as expected |
+
+## Responsiveness
+
+| Mobile | ![screenshot](documentation/mobile.jpg) | Works as expected with slight style difference|
+| Tablet (DevTools) | ![screenshot](documentation/tablet.png) | Works as expected |
+| Desktop | ![screenshot](documentation/desktop.png) | Works as expected |
+
+
