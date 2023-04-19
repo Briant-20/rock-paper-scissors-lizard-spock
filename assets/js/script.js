@@ -89,12 +89,13 @@ let playRound = () => {
 };
 
 let getPlayerChoice = (i) => {
-    console.log(i);
+    return function() {
     // Get the player's choice from the button's attribute
     playerChoice = buttons[i].getAttribute("data-type");
     // Set the playerChoiceIcon variable to the innerHTML of the button
     playerChoiceIcon = gameArea.querySelectorAll("button");
     playerChoiceIcon = playerChoiceIcon[i-1].innerHTML;
+    };
 }; 
 
 // Function to start a new game
@@ -108,9 +109,9 @@ let playGame = () => {
     choiceIcons.style.display = 'none';
     roundResults.innerHTML = "Best of 3, choose wisely";
   // Set up event listeners for each button
-  for (let i = 0; i < buttons.length; i++) {
+  for (let i = 1; i < buttons.length; i++) {
     // Add event listeners to the button
-    buttons[i].addEventListener("click", () => {getPlayerChoice(i);});
+    buttons[i].addEventListener("click", getPlayerChoice(i));
     buttons[i].addEventListener("click", playRound);
 }
 };
