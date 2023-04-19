@@ -16,6 +16,8 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
+![screenshot](documentation/jshint.png)
+
 ## Browser Compatibility
 
 | Chrome | ![screenshot](documentation/chrome.png) | Works as expected |
