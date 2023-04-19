@@ -28,4 +28,18 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | Tablet (DevTools) | ![screenshot](documentation/tablet.png) | Works as expected |
 | Desktop | ![screenshot](documentation/desktop.png) | Works as expected |
 
+## Lighthouse Audit
+
+![screenshot](documentation/lighthouse.png)
+
+## Bugs
+
+Trying to call the getPlayerChoice function with a parameter inside a for loop with an event listener. 
+
+Originally i had the function defined inside the for loop and this worked but when putting the code through jshint it showed a warning because of that. When i declared the function outside the loop it would only return the last value for i and not the actual players choice. 
+
+To fix this i added return function() to the existing function so that it would create a new function every time a button was clicked and set the new variables correctly.
+
+There are no remaining bugs that I am aware of.
+
 
