@@ -15,7 +15,7 @@ let playAgainButton = document.getElementsByTagName("button")[0];
 let gameArea = document.getElementById("game-area");
 let choiceIcons = document.getElementById("choice-icons");
 let roundResults = document.getElementsByTagName("p")[0];
-let choices = ["rock","paper","scissors","lizard","spock"];
+let choices = ["Rock","Paper","Scissors","Lizard","Spock"];
 let playerIcon = document.getElementsByTagName("p")[1];
 let computerIcon = document.getElementsByTagName("p")[2];
 // Hide the play-again button initially
@@ -59,13 +59,13 @@ let playRound = () => {
         roundResults.style.display = 'flex';
         choiceIcons.style.display = 'flex';
         // Determine the winner of the round based on the rules
-        if(rules[playerChoice].beats.includes(computerChoice)){
+        if(rules[playerChoice.toLocaleLowerCase()].beats.includes(computerChoice.toLocaleLowerCase())){
             roundResults.innerHTML = "You win this round! ";
             roundResults.innerHTML += `${playerChoice} beats ${computerChoice}`;
             playerWins++;
             games++;
         }
-        else if(rules[computerChoice].beats.includes(playerChoice)){
+        else if(rules[computerChoice.toLocaleLowerCase()].beats.includes(playerChoice.toLocaleLowerCase())){
             roundResults.innerHTML = "You lose! ";
             roundResults.innerHTML += `${computerChoice} beats ${playerChoice}`;
             computerWins++;
@@ -107,8 +107,8 @@ let playGame = () => {
     gameArea.style.display = 'block';
     choiceIcons.style.display = 'none';
     roundResults.innerHTML = "Best of 3, choose wisely";
-  // Set up event listeners for each button
-  for (let i = 1; i < buttons.length; i++) {
+    // Set up event listeners for each button
+    for (let i = 1; i < buttons.length; i++) {
     // Add event listeners to the button
     buttons[i].addEventListener("click", getPlayerChoice(i));
     buttons[i].addEventListener("click", playRound);
