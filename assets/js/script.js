@@ -10,14 +10,14 @@ let computerChoiceIcon;
 // Get HTML elements for variables
 let buttons = document.getElementsByTagName("button");
 let playAgain = document.getElementById("play-again");
-let playAgainText = document.getElementsByTagName("p")[3];
+let playAgainText = document.getElementById("p4")
 let playAgainButton = document.getElementsByTagName("button")[0];
 let gameArea = document.getElementById("game-area");
 let choiceIcons = document.getElementById("choice-icons");
-let roundResults = document.getElementsByTagName("p")[0];
+let roundResults = document.getElementById("p1");
 let choices = ["Rock","Paper","Scissors","Lizard","Spock"];
-let playerIcon = document.getElementsByTagName("p")[1];
-let computerIcon = document.getElementsByTagName("p")[2];
+let playerIcon = document.getElementById("p2");
+let computerIcon = document.getElementById("p3");
 // Hide the play-again button initially
 playAgain.style.display = 'none';
 // Define rules for which choices beat which other choices
