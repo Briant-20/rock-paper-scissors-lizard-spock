@@ -8,11 +8,21 @@ This website is designed to allow the user to play against the computer in a gam
 
 The two main colours used are black, and white.
 
+I used font awesome to add icons to the page.
+
+The main header for the page uses an italic font-style.
+
 ## Features
 
 The icons visible on the page are clickable buttons that when clicked will register that icon as the users choice in the game.
 
 The computer will generate a random number and make a choice, it will then compare your choice and the computers and determine the winner.
+
+The site will play a minimum of three games before determining a winner.
+
+After a game is completed the user is prompted with a play again button. 
+
+The website is fully responsive and works on all device sizes.
 
 ## Tools & Technologies Used
 
@@ -81,7 +91,7 @@ I got help with the setting the rules for the game and determining the winner us
 
 ### Content
 
-| [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+- [Markdown Builder](https://traveltimn.github.io/markdown-builder) - tool to help generate the Markdown files
 
 ### Acknowledgements
 
