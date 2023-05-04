@@ -20,13 +20,17 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 ## Browser Compatibility
 
+| Browser | Screenshot | Notes |
+| --- | --- | --- |
 | Chrome | ![screenshot](documentation/chrome.png) | Works as expected |
 | Firefox | ![screenshot](documentation/firefox.png) | Works as expected |
 | Edge | ![screenshot](documentation/edge.png) | Works as expected |
 
 ## Responsiveness
 
-| Mobile | ![screenshot](documentation/mobile.jpg) | Works as expected with slight style difference|
+| Size | Screenshot | Notes |
+| --- | --- | --- |
+| Mobile | ![screenshot](documentation/mobile.jpg) | Works as expected with slight style difference |
 | Tablet (DevTools) | ![screenshot](documentation/tablet.png) | Works as expected |
 | Desktop | ![screenshot](documentation/desktop.png) | Works as expected |
 
