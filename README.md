@@ -12,6 +12,8 @@ I used font awesome to add icons to the page.
 
 The main header for the page uses an italic font-style.
 
+The colour red is used
+
 ## Features
 
 The icons visible on the page are clickable buttons that when clicked will register that icon as the users choice in the game.
@@ -23,6 +25,13 @@ The site will play a minimum of three games before determining a winner.
 After a game is completed the user is prompted with a play again button. 
 
 The website is fully responsive and works on all device sizes.
+
+There is a rules button which when clicked displays the rules of the game to the user.
+
+## Future Features
+
+In the future I would like to add a multiplayer option to the game which would allow users to play against other users such as their friends
+
 
 ## Tools & Technologies Used
 
