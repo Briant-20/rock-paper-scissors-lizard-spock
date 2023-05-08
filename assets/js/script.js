@@ -96,11 +96,14 @@ let getPlayerChoice = (i) => {
     return function() {
     // Get the player's choice from the button's attribute
     playerChoice = buttons[i].getAttribute("data-type");
+    // Reset the variable i to 3 if it is equal to 1 to avoid a TypeError 
+    if (i === 1 ){
+        i = 3
+    }
     // Set the playerChoiceIcon variable to the innerHTML of the button
     playerChoiceIcon = gameArea.querySelectorAll("button")[i-2].innerHTML;
     };
 }; 
-
 // Function to start a new game
 let playGame = () => {
     // Reset game state
