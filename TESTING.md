@@ -24,7 +24,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | --- | --- | --- |
 | Chrome | ![screenshot](documentation/chrome.png) | Works as expected |
 | Firefox | ![screenshot](documentation/firefox.png) | Works as expected |
-| Edge | ![screenshot](documentation/edge.png) | Works as expected |
+| Edge | ![screenshot](documentation/edge.png) | Workgits as expected |
 
 ## Responsiveness
 
@@ -40,11 +40,22 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 ## Bugs
 
-Trying to call the getPlayerChoice function with a parameter inside a for loop with an event listener. 
+### Fixed Bugs
 
-Originally i had the function defined inside the for loop and this worked but when putting the code through jshint it showed a warning because of that. When i declared the function outside the loop it would only return the last value for i and not the actual players choice. 
+Trying to call the `getPlayerChoice` function with a parameter inside a for-loop with an event listener.
+Originally I had the function defined inside the for-loop and this worked, but when putting the code through jshint, it showed a warning because of that. When I declared the function outside of the loop, it would only return the last value for `i` and not the actual player's choice.
+![screenshot](documentation/jshint-warning.png)
+To fix this, I added `return function()` to the existing function so that it would create a new function every time a button was clicked, and set the new variables correctly.
 
-To fix this i added return function() to the existing function so that it would create a new function every time a button was clicked and set the new variables correctly.
+After the game was finished `i` would reset to 1 this caused a TypeError with `playerChoiceIcon = gameArea.querySelectorAll("button")[i-2].innerHTML;` as it was trying to access the innerHTML of undefined.
+![screenshot](documentation/typeerror.png)
+To fix this i added an if statement to check if the value was equal to 1 before `playerChoiceIcon = gameArea.querySelectorAll("button")[i-2].innerHTML;` would run, if it is `i` will be changed to 3.
+
+### Unfixed Bugs
+
+When viewing the game on my iPhone SE2, the Font Awesome icons appear blue instead of white.
+
+![screenshot](documentation/mobile.jpg)
 
 There are no remaining bugs that I am aware of.
 
