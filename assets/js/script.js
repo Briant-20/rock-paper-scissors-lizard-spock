@@ -62,13 +62,13 @@ let playRound = () => {
         roundResults.style.display = 'flex';
         choiceIcons.style.display = 'flex';
         // Determine the winner of the round based on the rules
-        if(rules[playerChoice.toLocaleLowerCase()].beats.includes(computerChoice.toLocaleLowerCase())){
+        if(rules[playerChoice.toLowerCase()].beats.includes(computerChoice.toLowerCase())){
             roundResults.innerHTML = "You win this round! ";
             roundResults.innerHTML += `${playerChoice} beats ${computerChoice}`;
             playerWins++;
             games++;
         }
-        else if(rules[computerChoice.toLocaleLowerCase()].beats.includes(playerChoice.toLocaleLowerCase())){
+        else if(rules[computerChoice.toLowerCase()].beats.includes(playerChoice.toLowerCase())){
             roundResults.innerHTML = "You lose! ";
             roundResults.innerHTML += `${computerChoice} beats ${playerChoice}`;
             computerWins++;
@@ -91,6 +91,7 @@ let playRound = () => {
     }
 };
 
+// Function to get the palyers choice
 let getPlayerChoice = (i) => {
     return function() {
     // Get the player's choice from the button's attribute
@@ -118,14 +119,17 @@ let playGame = () => {
 }
 };
 
+// Function to display the rules modal
 let displayRules = () => {
     rulesModal.style.display = "block";
   }
+// Calls the displayRules function when the rulesButton is clicked 
 rulesButton.addEventListener("click",displayRules)
-
+// Function to hide the rules modal
 let hideRules = () => {
     rulesModal.style.display = "none";
   }
+// Calls the displayRules function when the closeButton is clicked
 closeButton.addEventListener("click",hideRules)
 
 // Call the playGame function to start the game
