@@ -65,6 +65,7 @@ h1 {
     font-style: italic;
     margin-left: auto; 
     margin-right: auto;
+    padding-right: 50px;
 }
 
 #top-div{
@@ -72,11 +73,14 @@ h1 {
     align-items: center;
 }
 
-#rules{
-    margin-right: auto;
+#rules-button{
+    height: 20px;
+    width: 60px;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
     background-color: black;
     color: white;
-    margin-right: 0px;
 }
 
 #rules-modal{
@@ -87,7 +91,7 @@ h1 {
 }
 
 #close-button{
-    color: #aaa;
+    color: red;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -107,5 +111,10 @@ h1 {
         width: 10%;   
     }
 
+    #rules-button{
+        margin-right: 0;
+        margin-left: 25px;
+    }
+    
 
 }
