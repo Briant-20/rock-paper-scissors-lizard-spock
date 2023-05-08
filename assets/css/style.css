@@ -15,6 +15,15 @@ button {
     align-items: center;
 }
 
+#top-div{
+    display: flex;
+}
+
+#rules{
+    height: 20px;
+    width: 7%;
+    font-size: 25px;
+}
 /* Style for the play-again button */
 #play-again-button {
     font-size: 30px;
@@ -54,8 +63,42 @@ h1 {
     display: flex;
     justify-content: center;
     font-style: italic;
+    margin-left: auto; 
+    margin-right: auto;
 }
 
+#top-div{
+    display: flex;
+    align-items: center;
+}
+
+#rules{
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    margin-right: 0px;
+}
+
+#rules-modal{
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    background-color: white;
+}
+
+#close-button{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 /* For devices with a width higher than 750px */
 @media screen and (min-width: 750px) {
     button{
@@ -63,4 +106,6 @@ h1 {
         height: 120px;
         width: 10%;   
     }
+
+
 }

@@ -11,13 +11,16 @@ let computerChoiceIcon;
 let buttons = document.getElementsByTagName("button");
 let playAgain = document.getElementById("play-again");
 let playAgainText = document.getElementById("p4")
-let playAgainButton = document.getElementsByTagName("button")[0];
+let playAgainButton = document.getElementById("play-again-button");
 let gameArea = document.getElementById("game-area");
 let choiceIcons = document.getElementById("choice-icons");
 let roundResults = document.getElementById("p1");
 let choices = ["Rock","Paper","Scissors","Lizard","Spock"];
 let playerIcon = document.getElementById("p2");
 let computerIcon = document.getElementById("p3");
+let rulesModal = document.getElementById("rules-modal");
+let rulesButton = document.getElementById("rules-button");
+let closeButton = document.getElementById("close-button");
 // Hide the play-again button initially
 playAgain.style.display = 'none';
 // Define rules for which choices beat which other choices
@@ -93,7 +96,7 @@ let getPlayerChoice = (i) => {
     // Get the player's choice from the button's attribute
     playerChoice = buttons[i].getAttribute("data-type");
     // Set the playerChoiceIcon variable to the innerHTML of the button
-    playerChoiceIcon = gameArea.querySelectorAll("button")[i-1].innerHTML;
+    playerChoiceIcon = gameArea.querySelectorAll("button")[i-2].innerHTML;
     };
 }; 
 
@@ -115,6 +118,15 @@ let playGame = () => {
 }
 };
 
+let displayRules = () => {
+    rulesModal.style.display = "block";
+  }
+rulesButton.addEventListener("click",displayRules)
+
+let hideRules = () => {
+    rulesModal.style.display = "none";
+  }
+closeButton.addEventListener("click",hideRules)
 
 // Call the playGame function to start the game
 playGame();
