@@ -8,25 +8,45 @@ This website is designed to allow the user to play against the computer in a gam
 
 The two main colours used are black, and white.
 
+![screenshot](documentation/desktop.png)
+
 I used font awesome to add icons to the page.
+
+![screenshot](documentation/icons.png)
 
 The main header for the page uses an italic font-style.
 
-The colour red is used on the close button for the modal to make it clear to the user on how to exit.
+![screenshot](documentation/italic.png)
+
+The colour red is used on the close button for the modal to make it clear to the user how to exit.
+
+![screenshot](documentation/red-x.png)
 
 ## Features
 
 The icons visible on the page are clickable buttons that when clicked will register that icon as the users choice in the game.
 
-The computer will generate a random number and make a choice, it will then compare your choice and the computers and determine the winner.
+![screenshot](documentation/icons.png)
+
+The computer will generate a random number and make a choice, it will then compare your choice and the computers and determine the winner. It will also show the current score of the game.
+
+![screenshot](documentation/results.png)
 
 The site will play a minimum of three games before determining a winner.
 
+![screenshot](documentation/winner.png)
+
 After a game is completed the user is prompted with a play again button. 
+
+![screenshot](documentation/play-again)
 
 The website is fully responsive and works on all device sizes.
 
+![screenshot](documentation/am-i-responsive.png)
+
 There is a rules button which when clicked displays the rules of the game to the user.
+
+![screenshot](documentation/rules.png)
 
 ## Future Features
 
