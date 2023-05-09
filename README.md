@@ -38,7 +38,7 @@ The site will play a minimum of three games before determining a winner.
 
 After a game is completed the user is prompted with a play again button. 
 
-![screenshot](documentation/play-again)
+![screenshot](documentation/play-again.png)
 
 The website is fully responsive and works on all device sizes.
 
