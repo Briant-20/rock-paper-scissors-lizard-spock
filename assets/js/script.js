@@ -77,6 +77,7 @@ let playRound = () => {
         else{
             roundResults.innerHTML = "This round is a tie try again";
         }
+        roundResults.innerHTML += `<br> The score is ${playerWins} to ${computerWins}`
         // If three rounds have been played, end the game
         if (games === 3){
             gameArea.style.display = 'none';
