@@ -37,6 +37,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 ## Lighthouse Audit
 
 ![screenshot](documentation/lighthouse.png)
+![screenshot](documentation/desktop-lighthouse.png)
 
 ## Bugs
 
