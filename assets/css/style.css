@@ -95,6 +95,7 @@ h1 {
 
 /* Sets the display property, position, z-index, and background color of the element with 'rules-modal' id*/
 #rules-modal{
+    top: 90px;
     display: none; 
     position: fixed; 
     z-index: 1;
@@ -114,7 +115,6 @@ img{
     font-size: 40px;
     font-weight: bold;
 }
-
 /* For devices with a width higher than 750px */
 @media screen and (min-width: 750px) {
     button{
