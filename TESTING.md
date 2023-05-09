@@ -56,7 +56,7 @@ To fix this i added an if statement to check if the value was equal to 1 before 
 
 When viewing the game on my iPhone SE2, the Font Awesome icons appear blue instead of white.
 
-![screenshot](documentation/mobile.jpg)
+![screenshot](documentation/ios-mobile.jpg)
 
 There are no remaining bugs that I am aware of.
 
