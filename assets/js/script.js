@@ -10,7 +10,7 @@ let computerChoiceIcon;
 // Get HTML elements for variables
 let buttons = document.getElementsByTagName("button");
 let playAgain = document.getElementById("play-again");
-let playAgainText = document.getElementById("p4")
+let playAgainText = document.getElementById("p4");
 let playAgainButton = document.getElementById("play-again-button");
 let gameArea = document.getElementById("game-area");
 let choiceIcons = document.getElementById("choice-icons");
@@ -77,7 +77,7 @@ let playRound = () => {
         else{
             roundResults.innerHTML = "This round is a tie try again";
         }
-        roundResults.innerHTML += `<br> The score is ${playerWins} to ${computerWins}`
+        roundResults.innerHTML += `<br> The score is ${playerWins} to ${computerWins}`;
         // If three rounds have been played, end the game
         if (games === 3){
             gameArea.style.display = 'none';
@@ -99,7 +99,7 @@ let getPlayerChoice = (i) => {
     playerChoice = buttons[i].getAttribute("data-type");
     // Reset the variable i to 3 if it is equal to 1 to avoid a TypeError 
     if (i === 1 ){
-        i = 3
+        i = 3;
     }
     // Set the playerChoiceIcon variable to the innerHTML of the button
     playerChoiceIcon = gameArea.querySelectorAll("button")[i-2].innerHTML;
@@ -126,15 +126,15 @@ let playGame = () => {
 // Function to display the rules modal
 let displayRules = () => {
     rulesModal.style.display = "block";
-  }
+  };
 // Calls the displayRules function when the rulesButton is clicked 
-rulesButton.addEventListener("click",displayRules)
+rulesButton.addEventListener("click",displayRules);
 // Function to hide the rules modal
 let hideRules = () => {
     rulesModal.style.display = "none";
-  }
+  };
 // Calls the displayRules function when the closeButton is clicked
-closeButton.addEventListener("click",hideRules)
+closeButton.addEventListener("click",hideRules);
 
 // Call the playGame function to start the game
 playGame();
