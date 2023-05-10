@@ -115,6 +115,11 @@ You can fork this repository by using the following steps:
 
 I got help with the setting the rules for the game and determining the winner using the rules object from this source. [Codecademy](https://discuss.codecademy.com/t/rock-paper-scissors-lizard-spock/408911)
 
+## Media
+
+[assets\images\favicon.png](https://www.geogebra.org/m/UYXDeKME)
+
+[assets\images\game-rules.webp](https://www.instructables.com/How-to-Play-Rock-Paper-Scissors-Lizard-Spock/)
 
 ### Content
 
